@@ -3,6 +3,13 @@ import './Stopwatch.css';
 
 
 class TimeDisplay extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      timeElapsed: 0,
+    }
+  }
+
   render() {
     return (
       <div className="time-display">

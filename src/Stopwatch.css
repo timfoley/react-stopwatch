@@ -1,10 +1,12 @@
 .stopwatch {
-  border: 3px dashed tomato;
+  padding: 20px;
+  border: 4px dashed tomato;
   display: flex;
   flex-direction: column;
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 3px;
 }
 
 .time-display {
@@ -15,7 +17,7 @@
 }
 
 .controls {
-  margin: 10px 0px;
+  margin: 20px 0px 0 0;
   display: flex;
   justify-content: space-around;
 }
@@ -25,5 +27,6 @@
   padding: 4px 10px 4px 10px;
   background: black;
   color: white;
+  font-size: 1.5em;
   border-radius: 3px;
 }
