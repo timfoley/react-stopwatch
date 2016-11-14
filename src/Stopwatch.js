@@ -7,6 +7,7 @@ class Stopwatch extends Component {
     super(props)
     this.state = {
       elapsedTime: 0,
+      running: false,
     }
   }
 
@@ -18,19 +19,23 @@ class Stopwatch extends Component {
       })
     }, 10)
     this.setState({
-      intervalId: intervalId
+      intervalId: intervalId,
+      running: true
     })
   }
 
   pause(e) {
     window.clearInterval(this.state.intervalId)
+    this.setState({
+      running: false,
+    })
   }
 
   reset(e) {
     window.clearInterval(this.state.intervalId)
     this.setState({
       elapsedTime: 0,
-      intervalId: null
+      running: false,
     })
   }
 
@@ -43,8 +48,7 @@ class Stopwatch extends Component {
           {this.state.elapsedTime}
         </div>
         <div className="controls">
-          <a className="button" href="#" onClick={e => this.start(e)}>Start</a>
-          <a className="button" href="#" onClick={e => this.pause(e)}>Pause</a>
+          { this.state.running ? <a className="button" href="#" onClick={e => this.pause(e)}>Pause</a> : <a className="button" href="#" onClick={e => this.start(e)}>Start</a> }
           <a className="button" href="#" onClick={e => this.reset(e)}>Reset</a>
         </div>
       </div>
