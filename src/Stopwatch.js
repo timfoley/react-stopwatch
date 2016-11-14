@@ -45,7 +45,7 @@ class Stopwatch extends Component {
     return (
       <div className="stopwatch">
         <div className="time-display">
-          {this.state.elapsedTime}
+          { parseInt(this.state.elapsedTime/6000) }:{ parseInt(this.state.elapsedTime / 100).toString().slice(-2) }:{this.state.elapsedTime.toString().slice(-2)} 
         </div>
         <div className="controls">
           { this.state.running ? <a className="button" href="#" onClick={e => this.pause(e)}>Pause</a> : <a className="button" href="#" onClick={e => this.start(e)}>Start</a> }
