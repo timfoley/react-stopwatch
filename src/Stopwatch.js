@@ -11,6 +11,7 @@ class Stopwatch extends Component {
   }
 
   start(e) {
+    // start the clock, and make sure to save the interval id for later use
     let intervalId = window.setInterval(_ => {
       this.setState({
         elapsedTime: this.state.elapsedTime + 1
@@ -28,7 +29,8 @@ class Stopwatch extends Component {
   reset(e) {
     window.clearInterval(this.state.intervalId)
     this.setState({
-      elapsedTime: 0
+      elapsedTime: 0,
+      intervalId: null
     })
   }
 
@@ -43,7 +45,7 @@ class Stopwatch extends Component {
         <div className="controls">
           <a className="button" href="#" onClick={e => this.start(e)}>Start</a>
           <a className="button" href="#" onClick={e => this.pause(e)}>Pause</a>
-          <a className="button" href="#">Reset</a>
+          <a className="button" href="#" onClick={e => this.reset(e)}>Reset</a>
         </div>
       </div>
     );
