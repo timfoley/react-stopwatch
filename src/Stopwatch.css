@@ -1,0 +1,29 @@
+.stopwatch {
+  border: 3px dashed tomato;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.time-display {
+  /*border: 3px solid navy;*/
+  font-size: 4em;
+  display: inline-block;
+  text-align: center;
+}
+
+.controls {
+  margin: 10px 0px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.button {
+  text-decoration: none;
+  padding: 4px 10px 4px 10px;
+  background: black;
+  color: white;
+  border-radius: 3px;
+}
